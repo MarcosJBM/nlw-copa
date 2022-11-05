@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "pretty": "prettier --write ."
+    "pretty": "prettier --write .",
+    "lint": "eslint --fix ."
   },
   "keywords": [],
   "author": "Marcos Botene",
