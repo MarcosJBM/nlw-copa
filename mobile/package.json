@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "eslint": "^8.27.0",
     "prettier": "^2.7.1"
   },
   "private": true
