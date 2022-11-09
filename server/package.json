@@ -1,16 +1,19 @@
 {
   "name": "server",
-  "version": "0.0.1",
   "description": "API for nlw copa application.",
+  "version": "0.0.1",
+  "author": "Marcos Botene",
+  "keywords": [],
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "pretty": "prettier --write .",
     "lint": "eslint --fix ."
   },
-  "keywords": [],
-  "author": "Marcos Botene",
-  "license": "ISC",
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^9.1.7",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
@@ -20,7 +23,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "prettier": "^2.7.1",
-    "prisma": "^4.5.0",
+    "prisma": "^4.6.0",
     "prisma-erd-generator": "^1.2.2",
     "tsx": "^3.11.0",
     "typescript": "^4.8.4"
