@@ -5,7 +5,7 @@ import appPreviewImg from '../assets/app-nlw-copa-preview.png';
 import logoImg from '../assets/logo.svg';
 import usersAvatarExampleImg from '../assets/users-avatar-example.png';
 import iconCheckImg from '../assets/icon-check.svg';
-import { api } from '../libs';
+import { api, toast } from '../libs';
 import { FormEvent, useState } from 'react';
 
 interface HomeProps {
@@ -37,13 +37,17 @@ export default function Home(props: HomeProps) {
 
       await navigator.clipboard.writeText(data.code);
 
-      alert(
-        'Bolão criado com sucesso, o código foi copiado para a área de transfêrencia!'
-      );
+      toast({
+        content:
+          'Bolão criado com sucesso, o código foi copiado para a área de transfêrencia!',
+      });
 
       setPoolTitle('');
     } catch (error) {
-      alert('Falha ao criar o bolão, tente novamente!');
+      toast({
+        content: 'Falha ao criar o bolão, tente novamente!',
+        type: 'error',
+      });
     }
   }
 
