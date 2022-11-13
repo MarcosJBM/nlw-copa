@@ -6,6 +6,7 @@ import logoImg from '../assets/logo.svg';
 import usersAvatarExampleImg from '../assets/users-avatar-example.png';
 import iconCheckImg from '../assets/icon-check.svg';
 import { api } from '../libs';
+import { FormEvent, useState } from 'react';
 
 interface HomeProps {
   poolCount: number;
@@ -13,7 +14,39 @@ interface HomeProps {
   userCount: number;
 }
 
+interface CreatePoolResponseProps {
+  code: string;
+}
+
+interface ResponseProps {
+  count: number;
+}
+
 export default function Home(props: HomeProps) {
+  const [poolTitle, setPoolTitle] = useState<string>('');
+
+  async function createPool(event: FormEvent) {
+    event.preventDefault();
+
+    try {
+      if (!poolTitle) return;
+
+      const { data } = await api.post<CreatePoolResponseProps>('/pools', {
+        title: poolTitle,
+      });
+
+      await navigator.clipboard.writeText(data.code);
+
+      alert(
+        'Bolão criado com sucesso, o código foi copiado para a área de transfêrencia!'
+      );
+
+      setPoolTitle('');
+    } catch (error) {
+      alert('Falha ao criar o bolão, tente novamente!');
+    }
+  }
+
   return (
     <div className='max-w-[1124px] h-screen m-auto grid grid-cols-2 gap-28 items-center'>
       <main>
@@ -34,14 +67,17 @@ export default function Home(props: HomeProps) {
 
         <form className='mt-10 flex gap-2'>
           <input
-            className='flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm'
+            className='flex-1 px-6 py-4 rounded bg-gray-800 border border-gray-600 text-sm text-gray-100'
             type='text'
             placeholder='Qual nome do seu bolão?'
+            value={poolTitle}
+            onChange={event => setPoolTitle(event.target.value)}
             required
           />
           <button
             className='bg-yellow-500 px-6 py-4 rounded text-gray-900 font-bold text-sm uppercase hover:bg-yellow-700'
             type='submit'
+            onClick={createPool}
           >
             Criar seu bolão
           </button>
@@ -82,10 +118,6 @@ export default function Home(props: HomeProps) {
       />
     </div>
   );
-}
-
-interface ResponseProps {
-  count: number;
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
