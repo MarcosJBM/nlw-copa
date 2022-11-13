@@ -119,6 +119,7 @@ export default function Home(props: HomeProps) {
         src={appPreviewImg}
         alt='Dois celulares exibindo uma prévia da aplicação móvel do NLW Copa'
         quality={100}
+        priority
       />
     </div>
   );
