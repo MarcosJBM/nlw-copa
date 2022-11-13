@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 
 import appPreviewImg from '../assets/app-nlw-copa-preview.png';
@@ -120,7 +120,7 @@ export default function Home(props: HomeProps) {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const [poolCountResponse, guessCountResponse, userCountResponse] =
     await Promise.all([
       api.get<ResponseProps>('/pools/count'),
@@ -134,5 +134,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
       guessCount: guessCountResponse.data.count,
       userCount: userCountResponse.data.count,
     },
+    revalidate: 60 * 10, // 10 minutes
   };
 };
