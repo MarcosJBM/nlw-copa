@@ -9,6 +9,7 @@ import { NativeBaseProvider, StatusBar } from 'native-base';
 import { Loading } from './src/components';
 import { AuthContextProvider } from './src/contexts';
 import { SignIn } from './src/screens';
+import { New } from './src/screens/new';
 import { THEME } from './src/styles';
 
 export default function App() {
@@ -27,7 +28,7 @@ export default function App() {
           translucent
         />
 
-        {fontsLoaded ? <SignIn /> : <Loading />}
+        {fontsLoaded ? <New /> : <Loading />}
       </AuthContextProvider>
     </NativeBaseProvider>
   );
