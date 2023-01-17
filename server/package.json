@@ -1,7 +1,7 @@
 {
   "name": "server",
   "description": "API for nlw copa application.",
-  "version": "0.0.1",
+  "version": "0.8.0",
   "author": "Marcos Botene",
   "keywords": [],
   "license": "ISC",
