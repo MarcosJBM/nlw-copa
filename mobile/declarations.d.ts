@@ -11,3 +11,16 @@ declare module '*.svg' {
 declare module '@env' {
   export const CLIENT_ID: string;
 }
+
+export declare global {
+  namespace ReactNavigation {
+    interface RootParamList {
+      new: undefined;
+      pools: undefined;
+      find: undefined;
+      details: {
+        id: string;
+      };
+    }
+  }
+}
