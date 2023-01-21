@@ -2,11 +2,11 @@ import { useTheme } from 'native-base';
 import { IconProps } from 'phosphor-react-native';
 import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
-interface Props extends TouchableOpacityProps {
+interface ButtonIconProps extends TouchableOpacityProps {
   icon: React.FC<IconProps>;
 }
 
-export function ButtonIcon({ icon: Icon, ...rest }: Props) {
+export function ButtonIcon({ icon: Icon, ...rest }: ButtonIconProps) {
   const { colors, sizes } = useTheme();
 
   return (
