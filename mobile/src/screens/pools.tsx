@@ -1,7 +1,7 @@
 import { Octicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { FlatList, Icon, useToast, VStack } from 'native-base';
-import { useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import {
   Button,
@@ -38,9 +38,11 @@ export function Pools() {
     }
   }
 
-  useEffect(() => {
-    fetchPools();
-  }, []);
+  useFocusEffect(
+    useCallback(() => {
+      fetchPools();
+    }, [])
+  );
 
   return (
     <VStack flex='1' bgColor='gray.900'>
