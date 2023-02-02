@@ -14,7 +14,7 @@ import {
 import { api } from '../services';
 
 export function Pools() {
-  const [pools, setPools] = useState<PoolCardProps[]>([]);
+  const [poolDetails, setPoolDetails] = useState<PoolCardProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const navigation = useNavigation();
@@ -26,7 +26,7 @@ export function Pools() {
 
       const { data } = await api.get('/pools');
 
-      setPools(data.pools);
+      setPoolDetails(data.pools);
     } catch (error) {
       toast.show({
         title: 'Não foi possível carregar os bolões',
@@ -69,9 +69,14 @@ export function Pools() {
         <Loading />
       ) : (
         <FlatList
-          data={pools}
+          data={poolDetails}
           keyExtractor={item => item.id}
-          renderItem={({ item }) => <PoolCard data={item} />}
+          renderItem={({ item }) => (
+            <PoolCard
+              data={item}
+              onPress={() => navigation.navigate('details', { id: item.id })}
+            />
+          )}
           ListEmptyComponent={<EmptyPoolList />}
           showsVerticalScrollIndicator={false}
           px={5}

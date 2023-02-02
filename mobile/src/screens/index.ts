@@ -1,3 +1,4 @@
+export * from './details';
 export * from './find';
 export * from './new';
 export * from './pools';

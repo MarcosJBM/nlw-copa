@@ -10,7 +10,7 @@ enum Errors {
   'You already joined this pool' = 'Você já está nesse bolão',
 }
 
-interface ShowToastProps {
+export interface ShowToastProps {
   title: string;
   type?: 'success' | 'error';
 }
