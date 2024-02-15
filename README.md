@@ -14,9 +14,9 @@ The application design is available on [**Figma**](https://www.figma.com/), if y
 
 # 🔩 Technologies
 
-- [React](https://pt-br.reactjs.org/)
+- [React](https://react.dev/)
 - [React Native](https://reactnative.dev/)
-- [Expo](https://docs.expo.dev/)
+- [Expo](https://expo.dev/)
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
