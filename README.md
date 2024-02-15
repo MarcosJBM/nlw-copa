@@ -1,53 +1,26 @@
-<div align='center'>
-  <img src='.github/logo.svg' alt='Logo do projeto NLW Copa'/>
-</div>
-
-<div align='center'>
-  <a href='#about'>📖 Sobre</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#design">🎨 Design</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href='#technologies'>🔩 Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href='#challenges'>🚀 Desafios</a>
-</div>
-
-</br>
-
 <div align="center">
-  <img src=".github/cover.svg" alt="Capa do projeto NLW Copa" width="780px" />
+  <img src=".github/cover.svg" alt="Project cover" width="720" />
 </div>
 
-<a id="about"></a>
+# 📖 About
 
-# 📖 Sobre o Projeto
+**NLW Copa** is a mobile and web application developed during the 2022 World Cup, focused on creating sweepstakes for games.
 
-O **NLW Copa** é uma aplicação mobile e web desenvolvida durante a copa do mundo de 2022, focada na criação de bolões para os jogos.
-
-<a id="design"></a>
+Project developed during Next Level Week, by [Rocketseat](https://www.rocketseat.com.br/).
 
 # 🎨 Design
 
-O design da aplicação está disponivel no Figma, caso tenha interesse, clique [**aqui**](https://www.figma.com/file/AiMJtzGtp1yj9EqMmYw3hP/nlw-copa?t=Ej9nWkPeB3CZsjmf-6).
+The application design is available on [**Figma**](https://www.figma.com/), if you are interested, click [**here**](https://www.figma.com/file/AiMJtzGtp1yj9EqMmYw3hP/nlw-copa?t=Ej9nWkPeB3CZsjmf-6).
 
-<a id="technologies"></a>
+# 🔩 Technologies
 
-# 🔩 Tecnologias
-
-Estas foram as principais tecnologias utilizadas no desenvolvimento da aplicação.
-
-- [ReactJS](https://pt-br.reactjs.org/)
+- [React](https://pt-br.reactjs.org/)
 - [React Native](https://reactnative.dev/)
 - [Expo](https://docs.expo.dev/)
-- [NextJS](https://nextjs.org/)
+- [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Native Base](https://nativebase.io/)
 - [Fastify](https://www.fastify.io/)
 - [Prisma](https://www.prisma.io/)
 - [Zod](https://zod.dev/)
-
-<a id="challenges"></a>
-
-# 🚀 Desafios
-
-Funcionalidades extras adicionadas na aplicação, além de alguns ajustes.
-
-- [ ] Ranking de usuários que mais acertaram palpites
